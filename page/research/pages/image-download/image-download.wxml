@@ -1,0 +1,22 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: '小程序无法指定下载目录，所以建议采用图片预览的方式，提示用户自己手动保存图片。小游戏新接口：saveImageToPhotosAlbum 可以实现直接保存到相册'}}"/>
+
+  <view class="page-body">
+    <view class="page-section">
+      <form action="" bindsubmit="download" bindreset="formReset">
+        <view class="page-body-info">
+          <text class="page-body-text-small">请在下面输入要下载的图片绝对地址</text>
+          <input type="text" name="url"  bindinput="bindKeyInput" value="https://www.xunfei.cn/xunfeimall/pc/image/app-kyls.png" placeholder="图片绝对地址"/>
+        </view>
+        <!--<button type="primary" formType="submit">使用saveImageToPhotosAlbum下载</button>-->
+        <button type="primary" bindtap="download">使用 saveImageToPhotosAlbum 下载</button>
+        <button type="primary" bindtap="downloadToTemp">使用 saveFile 下载</button>
+      </form>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

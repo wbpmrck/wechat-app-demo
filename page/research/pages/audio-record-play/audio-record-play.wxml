@@ -1,0 +1,38 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'recorderManager'}}"/>
+
+  <view class="page-body">
+    <view class="page-section">
+
+      <Text>{{tempFilePath}}</Text>
+
+      <block>
+
+        <view class="page-body-buttons">
+
+          <view wx:if="{{recording === false && playing === false}}" class="page-body-button" bindtap="startRecord">
+            <image src="../../resources/img/record.png"></image>
+          </view>
+
+          <view wx:if="{{recording === true}}" class="page-body-button" bindtap="stopRecord">
+            <image src="../../resources/img/stop.png"></image>
+          </view>
+
+          <view wx:if="{{playing === false && tempFilePath.length>0}}" class="page-body-button" bindtap="play">
+            <image src="../../resources/img/play.png"></image>
+          </view>
+
+        </view>
+      </block>
+      <button bindtap="save">保存到相册</button>
+
+
+
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

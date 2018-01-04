@@ -1,0 +1,17 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: '我是首页'}}"/>
+
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-body-info">
+        <text class="page-body-text-small">打开下面的开关，使得应用进入会先进入本页</text>
+        <switch checked="{{useHomePage}}" bindchange="switchChange"/>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>
